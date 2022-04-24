@@ -1,10 +1,12 @@
 package racingcar.utils;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import racingcar.constants.ErrorMessage;
 import racingcar.domain.RacingCar;
 import racingcar.domain.RacingCars;
 
@@ -33,6 +35,27 @@ public class RacingCarFactoryTest {
                     final RacingCar racingCar = racingCars.get(i);
                     assertThat(racingCar.getName()).isEqualTo(names[i]);
                 }
+
+            }
+
+        }
+
+        @Nested
+        @DisplayName("문자열 \"pobi,pobi,honux\"를 받으면")
+        class Context_Input_Duplicated {
+
+            final String input = "pobi,pobi,honux";
+
+            @Test
+            @DisplayName("IllegalArgumentException(자동차의 이름은 중복이 될 수 없습니다.)을 발생시킨다.")
+            void It_Throws_IllegalArgumentException() {
+
+                final IllegalArgumentException illegalArgumentException =
+                        assertThrows(IllegalArgumentException.class, () -> RacingCarFactory.makeCars(input));
+
+                final String errorMessage = illegalArgumentException.getMessage();
+
+                assertThat(errorMessage).isEqualTo(ErrorMessage.CAR_NAME_IS_DUPLICATE);
 
             }
 
