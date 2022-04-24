@@ -5,7 +5,7 @@ import java.util.List;
 import racingcar.domain.RacingCar;
 import racingcar.domain.RacingCars;
 
-public class CarFactory {
+public class RacingCarFactory {
 
     public static RacingCars makeCars(final String input) {
         final List<RacingCar> racingCars = new ArrayList<>();

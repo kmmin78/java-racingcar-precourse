@@ -10,6 +10,10 @@ public class RacingCar {
     private Integer distance;
 
     public RacingCar(final String name) {
+        this(name, 0);
+    }
+
+    public RacingCar(final String name, final Integer distance) {
         if (name.length() > NAME_LIMIT) {
             throw new IllegalArgumentException(ErrorMessage.CAR_NAME_LENGTH_IS_MORE_THAN_FIVE);
         }
@@ -17,7 +21,7 @@ public class RacingCar {
             throw new IllegalArgumentException(ErrorMessage.CAR_NAME_IS_EMPTY);
         }
         this.name = name;
-        this.distance = 0;
+        this.distance = distance;
     }
 
     public String getName() {
@@ -29,7 +33,7 @@ public class RacingCar {
     }
 
     public void race() {
-        if(canGoForward()){
+        if (canGoForward()) {
             distance += 1;
         }
     }

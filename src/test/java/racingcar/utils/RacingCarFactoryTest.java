@@ -25,7 +25,7 @@ public class RacingCarFactoryTest {
             @DisplayName("각자의 이름을 가진 3개의 자동차를 생성한다.")
             void It_Create_Cars() {
 
-                final RacingCars racingCars = CarFactory.makeCars(input);
+                final RacingCars racingCars = RacingCarFactory.makeCars(input);
 
                 final String[] names = input.split(",");
 
