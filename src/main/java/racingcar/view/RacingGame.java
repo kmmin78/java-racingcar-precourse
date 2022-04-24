@@ -22,16 +22,18 @@ public class RacingGame {
     }
 
     public void start() {
+        receivePlayerInput();
+        if (processIndicator == ProcessIndicator.COUNT_SET) {
+            racingStart();
+        }
+    }
+
+    private void receivePlayerInput() {
         if (processIndicator == ProcessIndicator.INIT) {
             makingCarProcess();
         }
-
         if (processIndicator == ProcessIndicator.CAR_SET) {
             settingTryCountProcess();
-        }
-
-        if (processIndicator == ProcessIndicator.COUNT_SET) {
-            racingStart();
         }
     }
 
@@ -43,7 +45,7 @@ public class RacingGame {
             processIndicator = ProcessIndicator.CAR_SET;
         } catch (IllegalArgumentException e) {
             messagePrinter.printMessage(e.getMessage());
-            start();
+            receivePlayerInput();
         }
     }
 
@@ -56,7 +58,7 @@ public class RacingGame {
             processIndicator = ProcessIndicator.COUNT_SET;
         } catch (IllegalArgumentException e) {
             messagePrinter.printMessage(e.getMessage());
-            start();
+            receivePlayerInput();
         }
     }
 
