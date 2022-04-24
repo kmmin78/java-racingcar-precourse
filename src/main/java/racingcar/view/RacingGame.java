@@ -1,10 +1,9 @@
 package racingcar.view;
 
-import java.util.List;
 import racingcar.constants.ProcessIndicator;
 import racingcar.constants.SystemMessage;
 import racingcar.controller.RacingGameController;
-import racingcar.domain.Car;
+import racingcar.domain.RacingCars;
 import racingcar.utils.MessagePrinter;
 
 public class RacingGame {
@@ -12,7 +11,7 @@ public class RacingGame {
     private final RacingGameController racingGameController;
     private final MessagePrinter messagePrinter;
     private ProcessIndicator processIndicator;
-    private List<Car> cars;
+    private RacingCars racingCars;
 
     public RacingGame() {
         this.racingGameController = new RacingGameController();
@@ -33,10 +32,11 @@ public class RacingGame {
         final String carNames = racingGameController.getInput();
 
         try {
-            cars = racingGameController.makeCars(carNames);
+            racingCars = racingGameController.makeCars(carNames);
         } catch (IllegalArgumentException e) {
             messagePrinter.printMessage(e.getMessage());
         }
         processIndicator = ProcessIndicator.CAR_SET;
     }
+
 }

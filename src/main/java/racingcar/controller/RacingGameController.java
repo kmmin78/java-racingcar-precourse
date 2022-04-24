@@ -1,7 +1,6 @@
 package racingcar.controller;
 
-import java.util.List;
-import racingcar.domain.Car;
+import racingcar.domain.RacingCars;
 import racingcar.service.RacingGameService;
 
 public class RacingGameController {
@@ -16,7 +15,7 @@ public class RacingGameController {
         return racingGameService.getInput();
     }
 
-    public List<Car> makeCars(final String carNames) {
+    public RacingCars makeCars(final String carNames) {
         return racingGameService.makeCars(carNames);
     }
 }

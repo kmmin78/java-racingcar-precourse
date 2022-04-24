@@ -8,12 +8,12 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import racingcar.constants.ErrorMessage;
 
-@DisplayName("Car클래스")
-public class CarTest {
+@DisplayName("RacingCar클래스")
+public class RacingCarTest {
 
-    @DisplayName("Car의 생성자는")
+    @DisplayName("RacingCar의 생성자는")
     @Nested
-    class Describe_Car_Constructor {
+    class Describe_Racing_Car_Constructor {
 
         @DisplayName("입력된 이름이 5자를 넘어갈 경우")
         @Nested
@@ -26,7 +26,7 @@ public class CarTest {
             void it_Throws_IllegalArgumentException() {
 
                 final IllegalArgumentException illegalArgumentException =
-                        assertThrows(IllegalArgumentException.class, () -> new Car(carName));
+                        assertThrows(IllegalArgumentException.class, () -> new RacingCar(carName));
 
                 final String errorMessage = illegalArgumentException.getMessage();
 
@@ -47,7 +47,7 @@ public class CarTest {
             void it_Throws_IllegalArgumentException() {
 
                 final IllegalArgumentException illegalArgumentException =
-                        assertThrows(IllegalArgumentException.class, () -> new Car(carName));
+                        assertThrows(IllegalArgumentException.class, () -> new RacingCar(carName));
 
                 final String errorMessage = illegalArgumentException.getMessage();
 
