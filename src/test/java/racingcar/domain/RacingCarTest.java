@@ -21,7 +21,7 @@ public class RacingCarTest {
 
             final String carName = "america";
 
-            @DisplayName("IllegalArgumentException을 발생시킨다.")
+            @DisplayName("IllegalArgumentException(자동차의 이름은 5자 이하만 가능합니다.)을 발생시킨다.")
             @Test
             void it_Throws_IllegalArgumentException() {
 
@@ -42,7 +42,7 @@ public class RacingCarTest {
 
             final String carName = "";
 
-            @DisplayName("IllegalArgumentException을 발생시킨다.")
+            @DisplayName("IllegalArgumentException(자동차의 이름은 공백으로 할 수 없습니다.)을 발생시킨다.")
             @Test
             void it_Throws_IllegalArgumentException() {
 

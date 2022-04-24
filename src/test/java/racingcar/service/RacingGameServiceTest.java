@@ -49,7 +49,7 @@ public class RacingGameServiceTest {
 
             @ParameterizedTest
             @ValueSource(strings = {"0", "-1", "-254", "-1482"})
-            @DisplayName("IllegalArgumentException을 발생시킨다.")
+            @DisplayName("IllegalArgumentException(횟수는 1이상의 정수만 입력 가능합니다.)을 발생시킨다.")
             void it_Throws_IllegalArgumentException(String input) {
 
                 final IllegalArgumentException illegalArgumentException =
@@ -69,7 +69,7 @@ public class RacingGameServiceTest {
 
             @ParameterizedTest
             @ValueSource(strings = {"five", "four", "seven", "eight"})
-            @DisplayName("IllegalArgumentException을 발생시킨다.")
+            @DisplayName("IllegalArgumentException(횟수는 1이상의 정수만 입력 가능합니다.)을 발생시킨다.")
             void it_Throws_IllegalArgumentException(String input) {
 
                 final IllegalArgumentException illegalArgumentException =
