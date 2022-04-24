@@ -8,8 +8,8 @@ public class RacingGameController {
 
     private final RacingGameService racingGameService;
 
-    public RacingGameController() {
-        this.racingGameService = new RacingGameService();
+    public RacingGameController(final RacingGameService racingGameService) {
+        this.racingGameService = racingGameService;
     }
 
     public String getInput() {

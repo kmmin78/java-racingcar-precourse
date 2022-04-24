@@ -16,9 +16,9 @@ public class RacingGame {
     private RacingCars racingCars;
     private RacingTryCount racingTryCount;
 
-    public RacingGame() {
-        this.racingGameController = new RacingGameController();
-        this.messagePrinter = new MessagePrinter();
+    public RacingGame(final RacingGameController racingGameController, final MessagePrinter messagePrinter) {
+        this.racingGameController = racingGameController;
+        this.messagePrinter = messagePrinter;
         this.processIndicator = ProcessIndicator.INIT;
     }
 
