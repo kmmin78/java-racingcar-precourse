@@ -29,6 +29,10 @@ public class RacingGame {
         if (processIndicator == ProcessIndicator.CAR_SET) {
             settingTryCountProcess();
         }
+
+        if (processIndicator == ProcessIndicator.COUNT_SET) {
+            racingStart();
+        }
     }
 
     private void makingCarProcess() {
@@ -53,6 +57,14 @@ public class RacingGame {
         } catch (IllegalArgumentException e) {
             messagePrinter.printMessage(e.getMessage());
             start();
+        }
+    }
+
+    private void racingStart() {
+        messagePrinter.printMessage(SystemMessage.RACING_RESULT);
+        for (int i = 0; i < racingTryCount.getCount(); i++) {
+            racingCars.raceAll();
+            racingCars.printRacingCarsState();
         }
     }
 
