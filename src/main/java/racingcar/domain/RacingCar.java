@@ -4,12 +4,13 @@ import racingcar.constants.ErrorMessage;
 import racingcar.utils.RandomNumberCreator;
 
 public class RacingCar {
-
+    private static final Integer NAME_LIMIT = 5;
+    private static final Integer GO_FORWARD_STANDARD = 4;
     private String name;
     private Integer distance;
 
     public RacingCar(final String name) {
-        if (name.length() > 5) {
+        if (name.length() > NAME_LIMIT) {
             throw new IllegalArgumentException(ErrorMessage.CAR_NAME_LENGTH_IS_MORE_THAN_FIVE);
         }
         if (name.equals("") || name.length() == 0) {
@@ -35,7 +36,7 @@ public class RacingCar {
 
     private boolean canGoForward() {
         final Integer randomNumber = RandomNumberCreator.makeRandomNumber();
-        return randomNumber >= 4;
+        return randomNumber >= GO_FORWARD_STANDARD;
     }
 
 }
