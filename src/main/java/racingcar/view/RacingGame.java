@@ -30,11 +30,12 @@ public class RacingGame {
     private void makingCarProcess() {
         messagePrinter.printMessage(SystemMessage.INPUT_CAR_NAMES);
         final String carNames = racingGameController.getInput();
-
         try {
             racingCars = racingGameController.makeCars(carNames);
         } catch (IllegalArgumentException e) {
             messagePrinter.printMessage(e.getMessage());
+            start();
+            return;
         }
         processIndicator = ProcessIndicator.CAR_SET;
     }
