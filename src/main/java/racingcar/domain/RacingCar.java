@@ -14,13 +14,14 @@ public class RacingCar {
     }
 
     public RacingCar(final String name, final Integer distance) {
-        if (name.length() > NAME_LIMIT) {
+        final String trimmedName = name.trim();
+        if (trimmedName.length() > NAME_LIMIT) {
             throw new IllegalArgumentException(ErrorMessage.CAR_NAME_LENGTH_IS_MORE_THAN_FIVE);
         }
-        if (name.equals("") || name.length() == 0) {
+        if (trimmedName.equals("") || trimmedName.length() == 0) {
             throw new IllegalArgumentException(ErrorMessage.CAR_NAME_IS_EMPTY);
         }
-        this.name = name;
+        this.name = trimmedName;
         this.distance = distance;
     }
 
